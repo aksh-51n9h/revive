@@ -1,10 +1,10 @@
 import 'package:revive/models/user.dart';
-import 'package:revive/repository/repository.dart';
+import 'package:revive/repository/firebase_repository.dart';
 
 class UserRepository implements FirebaseRepository<User> {
   @override
-  Future<bool> addDocument(User object) {
-    // TODO: implement addDocument
+  Future<bool> addDocumemt(User object) {
+    // TODO: implement addDocumemt
     throw UnimplementedError();
   }
 

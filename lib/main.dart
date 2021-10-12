@@ -3,8 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import 'lib.dart';
+
 void main() {
-  runApp(MyApp());
+  runApp(ReviveApp());
 }
 
 class MyApp extends StatefulWidget {

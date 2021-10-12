@@ -1,45 +1,57 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:revive/models/entity.dart';
+import 'package:equatable/equatable.dart';
 
-class User implements Entity<User> {
+class User extends Equatable {
   ///[User] class properties
   final String uid;
   final String name;
   final String emailAddress;
+  final String displayImageUrl;
 
-  //Constructor
+  ///[User] constructor
   User({
     required this.uid,
     required this.name,
     required this.emailAddress,
+    required this.displayImageUrl,
   });
 
-  ///Convert User object to json.
-  ///returns [Map<String, Object?>]
-  Map<String, Object?> toJson() {
+  User copyWith({
+    String? uid,
+    String? name,
+    String? emailAddress,
+    String? displayImageUrl,
+  }) {
+    return User(
+      uid: uid ?? this.uid,
+      name: name ?? this.name,
+      emailAddress: emailAddress ?? this.emailAddress,
+      displayImageUrl: displayImageUrl ?? this.displayImageUrl,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
     return {
       'uid': uid,
       'name': name,
       'emailAddress': emailAddress,
+      'displayImageUrl': displayImageUrl,
     };
   }
 
-  ///Factory method to create an empty [User]
-  factory User.empty() {
-    return User(uid: "", name: "", emailAddress: "");
-  }
-
-  ///Factory method to convert [DocumentSnapshot] to [User] object.
-  factory User.fromSnapshot(DocumentSnapshot snapshot) {
-    ///store [snapshot.data()] object as [Map<String, Object?>]
-    Map<String, Object?> data = snapshot.data() as Map<String, Object?>;
-
+  factory User.fromMap(Map<String, dynamic> map) {
     return User(
-      ///First check [data] contains key, if [true] then set the value to correspoing parameter
-      uid: data.containsKey('uid') ? data['uid'] as String : "",
-      name: data.containsKey('name') ? data['uid'] as String : "",
-      emailAddress:
-          data.containsKey('emailAddress') ? data['uid'] as String : "",
+      uid: map['uid'],
+      name: map['name'],
+      emailAddress: map['emailAddress'],
+      displayImageUrl: map['displayImageUrl'],
     );
   }
+
+  @override
+  String toString() {
+    return 'User(uid: $uid, name: $name, emailAddress: $emailAddress, displayImageUrl: $displayImageUrl)';
+  }
+
+  @override
+  List<Object?> get props => [uid, name, emailAddress, displayImageUrl];
 }
