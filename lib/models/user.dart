@@ -1,13 +1,11 @@
 import 'package:equatable/equatable.dart';
 
 class User extends Equatable {
-  ///[User] class properties
   final String uid;
   final String name;
   final String emailAddress;
   final String displayImageUrl;
 
-  ///[User] constructor
   User({
     required this.uid,
     required this.name,

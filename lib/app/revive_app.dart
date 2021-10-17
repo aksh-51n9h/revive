@@ -5,6 +5,12 @@ class ReviveApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      home: Scaffold(
+        body: Container(
+          child: Text("hello"),
+        ),
+      ),
+    );
   }
 }

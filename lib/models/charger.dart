@@ -1,1 +1,4 @@
-// TODO: implement charger.dart
+class Charger {
+  // TODO: implement charger.dart
+  Charger();
+}

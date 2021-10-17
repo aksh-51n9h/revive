@@ -31,6 +31,7 @@ dependencies:
   collection: ^1.15.0
   flutter_bloc: ^7.0.0
   equatable: ^2.0.2
+  formz: ^0.4.1
 
 dev_dependencies:
   flutter_lints: ^1.0.4
