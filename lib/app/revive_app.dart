@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/app/cubit/revive_app_cubit.dart';
+import 'package:revive/lib.dart';
 import 'package:revive/pages/authentication_form_page/authentication_form_page.dart';
+import 'package:revive/pages/registration_page/registration_page.dart';
 
 class ReviveApp extends StatelessWidget {
   const ReviveApp({Key? key}) : super(key: key);
@@ -31,11 +33,11 @@ class _ReviveApp extends StatelessWidget {
         return MaterialApp(
           title: state.appTitle,
           theme: state.appTheme,
+          routes: {
+            "/home": (_) => MyApp(),
+          },
           home: Scaffold(
-            appBar: AppBar(
-              title: Text(state.appTitle),
-            ),
-            body: AuthenticationFormPage(),
+            body: RegistrationFormPage(),
           ),
         );
       },
