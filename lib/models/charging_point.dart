@@ -6,7 +6,8 @@ class ChargingPoint extends Equatable {
   final ChargingPointLocation location;
   final int availableSlot;
   final bool isOpen;
-  ChargingPoint({
+
+  const ChargingPoint({
     required this.name,
     required this.location,
     required this.availableSlot,

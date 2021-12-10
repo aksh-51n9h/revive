@@ -8,16 +8,21 @@ class PasswordInput extends FormzInput<String, PasswordInputError> {
 
   @override
   PasswordInputError? validator(String value) {
+    if (value.isEmpty) {
+      return null;
+    }
+
     RegExp passwordLengthValidationRegExp = RegExp(r"[a-zA-Z0-9]{8,}$");
 
-    if (!passwordLengthValidationRegExp.hasMatch(value))
+    if (!passwordLengthValidationRegExp.hasMatch(value)) {
       return PasswordInputError.short_length;
+    }
 
     RegExp passwordValidationRegExp =
         RegExp(r"(?=.*\d)(?=.*[a-zA-z])[a-zA-z0-9]{8,}$");
 
     return passwordValidationRegExp.hasMatch(value)
-        ? PasswordInputError.valid
+        ? null
         : PasswordInputError.invalid;
   }
 }

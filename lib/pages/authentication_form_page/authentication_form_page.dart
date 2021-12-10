@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:revive/app/cubit/revive_app_cubit.dart';
+import 'package:revive/lib.dart';
+import 'package:revive/pages/charging_station_info_page/charging_station_info_page.dart';
 import 'package:revive/widgets/email_text_form_field.dart';
 import 'package:revive/widgets/password_text_form_field.dart';
 import 'package:revive/widgets/spacing.dart';
@@ -29,12 +31,11 @@ class _AuthenticationFormPageState extends State<AuthenticationFormPage> {
         return Scaffold(
           body: TweenAnimationBuilder<double>(
               tween: _gradientStopTween,
-              duration: Duration(milliseconds: 400),
+              duration: const Duration(milliseconds: 400),
               curve: Curves.easeInCubic,
               builder: (context, val, _) {
-                print(_gradientStopTween);
                 return Container(
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   decoration: BoxDecoration(
                     color: Colors.amber,
                     gradient: LinearGradient(
@@ -45,23 +46,28 @@ class _AuthenticationFormPageState extends State<AuthenticationFormPage> {
                     ),
                   ),
                   child: ListView(
+                    physics: const NeverScrollableScrollPhysics(),
                     children: [
-                      PasswordTextFormField(),
-                      Spacing(height: 12),
-                      EmailTextFormField(),
-                      Spacing(height: 12),
+                      const PasswordTextFormField(),
+                      const Spacing(vertical: 12),
+                      const EmailTextFormField(),
+                      const Spacing(vertical: 12),
                       Text(
                         "Easy, fast and convinient way to track your charging stations and your travel routes.",
                         style: state.appTheme.textTheme.caption,
                       ),
-                      Spacing(height: 12),
+                      const Spacing(vertical: 12),
                       Text(
-                        "Welcome!",
+                        welcomeText,
                         style: state.appTheme.textTheme.headline2!.copyWith(
                           color: state.appTheme.colorScheme.primary,
                           fontWeight: FontWeight.bold,
                         ),
-                      )
+                      ),
+                      Center(
+                        child: Image.asset(
+                            "assets/images/welcome_screen_car_image.png"),
+                      ),
                     ],
                     reverse: true,
                   ),
@@ -78,12 +84,14 @@ class _AuthenticationFormPageState extends State<AuthenticationFormPage> {
                   onPressed: () {
                     Navigator.pushNamed(context, "/home");
                   },
-                  child: Text(state.loginButtonText),
+                  child: const Text(loginButtonText),
                   style: state.elevatedButtonStyle,
                 ),
                 TextButton(
-                  onPressed: () {},
-                  child: Text(state.createAccountButtonText),
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/create_account");
+                  },
+                  child: const Text(createAccountButtonText),
                   style: state.elevatedButtonStyle,
                 ),
               ],

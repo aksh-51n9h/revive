@@ -1,0 +1,16 @@
+const String appTitle = "Revive App";
+const String loginButtonText = "SIGN IN";
+const String signupButtonText = "SIGN UP";
+const String alreadyHaveAccountButtonText = "ALREADY REGISTERED";
+const String createAccountButtonText = "CREATE ACCOUNT";
+const String myProfileButtonText = " My Profile";
+const String mapButtonText = "Map";
+const String historyButtonText = "History";
+const String settingsButtonText = "Settings";
+const String aboutButtonText = "About";
+const String logoutButtonText = "Logout";
+const String tapToSearchText = "Tap to search";
+const String searchHintLabelText = "Search Charging Point";
+const String welcomeText = "Welcome!";
+const String newAccountText = "New Account";
+const double drawerMenuItemSpacing = 8;

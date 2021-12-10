@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "187047686547",
+    "project_id": "revive-charging",
+    "storage_bucket": "revive-charging.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187047686547:android:df9e52e4578c9b74e67866",
+        "android_client_info": {
+          "package_name": "com.bits.revive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187047686547-g66huhdakg3rfn714lp026efpq0p82qc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bits.revive",
+            "certificate_hash": "893478adccdb97e51223ce2f3db0454a799d97b1"
+          }
+        },
+        {
+          "client_id": "187047686547-6qsphcbk8jcb0fd9cc98f6f7pgo9kue7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgV8ocpbEmqmi0r0vseGKeOxfbJS70Bcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187047686547-6qsphcbk8jcb0fd9cc98f6f7pgo9kue7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

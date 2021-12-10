@@ -7,7 +7,11 @@ import 'package:revive/inputs/inputs.dart';
 part 'authentication_form_page_state.dart';
 
 class AuthenticationFormPageCubit extends Cubit<AuthenticationFormPageState> {
-  AuthenticationFormPageCubit() : super(AuthenticationFormPageState());
+  AuthenticationFormPageCubit() : super(const AuthenticationFormPageState());
+
+  void onObscureModeToggle(bool toggle) {
+    emit(state.copyWith(obscureModeToggle: toggle));
+  }
 
   void onEmailInputChanged(String value) {
     emit(state.copyWith(
